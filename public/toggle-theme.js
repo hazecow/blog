@@ -1,16 +1,9 @@
 const primaryColorScheme = ""; // "light" | "dark"
 
-// Get theme data from local storage
-const currentTheme = localStorage.getItem("theme");
-
 function getPreferTheme() {
-  // return theme value in local storage if it is set
+  const currentTheme = localStorage.getItem("theme");
   if (currentTheme) return currentTheme;
-
-  // return primary color scheme if it is set
   if (primaryColorScheme) return primaryColorScheme;
-
-  // return user device's prefer color scheme
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
@@ -25,18 +18,14 @@ function setPreference() {
 
 function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
-
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
+  document.querySelector("#theme-btn-mobile")?.setAttribute("aria-label", themeValue);
 }
 
-// set early so no page flashes / CSS is made aware
+// 即時反映(初回・フラッシュ防止)
 reflectPreference();
 
-function init() {
-  // set on load so screen readers can get the latest value on the button
-  reflectPreference();
-
-  // now this script can find and listen for clicks on the control
+function attachListeners() {
   document.querySelector("#theme-btn")?.addEventListener("click", () => {
     themeValue = themeValue === "light" ? "dark" : "light";
     setPreference();
@@ -47,14 +36,18 @@ function init() {
   });
 }
 
+// 遷移直後、描画確定前に属性を復元(ちらつき・light固定を防止)
+document.addEventListener("astro:after-swap", reflectPreference);
 
-window.onload = () => {
-  init()
-};
+// 初回ロード時 & 遷移後のページロード完了時、両方でボタンにリスナーを再登録
+document.addEventListener("astro:page-load", () => {
+  reflectPreference();
+  attachListeners();
+});
 
-// sync with system changes
+// システムのカラースキーム変更に追従
 window.matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", ({matches: isDark}) => {
+  .addEventListener("change", ({ matches: isDark }) => {
     themeValue = isDark ? "dark" : "light";
     setPreference();
   });

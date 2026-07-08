@@ -23,14 +23,14 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
  *    All tags will be displayed in single page "/tags".
  */
 export const site = {
-  title: 'Astro Theme Yi', // required
+  title: 'Scattering in Haze', // required
   favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
-  author: "Astro-Yi", // required
-  avatar: '/avatar.png', // required
-  url: 'https://astro-yi-nu.vercel.app', // required
+  description: 'Thoughts scattered, gently, in the fog',
+  author: "Hazecow", // required
+  avatar: '/avatar.jpg', // required
+  url: 'https://blog.hazecow.com', // required
   baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
-  motto: 'Actions speak louder than words.',
+  motto: 'Hello, low-level world!',
   recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
@@ -71,11 +71,11 @@ export const categories = [
     iconClass: "ri-draft-line",
     href: "/blog/1",
   },
-  {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
-  },
+  // {
+  //   name: "Feed",
+  //   iconClass: "ri-lightbulb-flash-line",
+  //   href: "/feed/1",
+  // },
   // {
   //   name: "Memos",
   //   iconClass: "ri-quill-pen-line",
@@ -86,65 +86,65 @@ export const categories = [
     iconClass: "ri-archive-line",
     href: "/archive/1",
   },
-  {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message",
-  },
+  // {
+  //   name: "Message",
+  //   iconClass: "ri-chat-1-line",
+  //   href: "/message",
+  // },
   {
     name: "Search",
     iconClass: "ri-search-line",
     href: "/search",
   },
-  {
-    name: "More",
-    iconClass: "ri-more-fill",
-    href: "javascript:void(0);",
-    children: [
-      {
-        name: 'About',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Friends',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ]
-  }
+  // {
+  //   name: "More",
+  //   iconClass: "ri-more-fill",
+  //   href: "javascript:void(0);",
+  //   children: [
+  //     {
+  //       name: 'About',
+  //       iconClass: 'ri-information-line',
+  //       href: '/about',
+  //     },
+  //     {
+  //       name: 'Friends',
+  //       iconClass: 'ri-user-5-line',
+  //       href: '/friends',
+  //       target: '_self',
+  //     },
+  //   ]
+  // }
 ]
 
 /**
  * Personal link address
  */
 export const infoLinks = [
-  {
-    icon: 'ri-telegram-fill',
-    name: 'telegram',
-    outlink: '',
-  },
-  {
-    icon: 'ri-twitter-fill',
-    name: 'twitter',
-    outlink: '',
-  },
-  {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: '',
-  },
+  // {
+  //   icon: 'ri-telegram-fill',
+  //   name: 'telegram',
+  //   outlink: '',
+  // },
+  // {
+  //   icon: 'ri-twitter-fill',
+  //   name: 'twitter',
+  //   outlink: '',
+  // },
+  // {
+  //   icon: 'ri-instagram-fill',
+  //   name: 'instagram',
+  //   outlink: '',
+  // },
   {
     icon: 'ri-github-fill',
     name: 'github',
-    outlink: 'https://github.com/cirry/astro-yi',
+    outlink: 'https://github.com/hazecow/hazecow.github.io',
   },
-  {
-    icon: 'ri-rss-fill',
-    name: 'rss',
-    outlink: '',
-  }
+  // {
+  //   icon: 'ri-rss-fill',
+  //   name: 'rss',
+  //   outlink: '',
+  // }
 ]
 
 /**
