@@ -28,7 +28,7 @@ export const site = {
   description: 'Thoughts scattered, gently, in the fog',
   author: "Hazecow", // required
   avatar: '/avatar.jpg', // required
-  url: 'https://blog.hazecow.com', // required
+  url: 'https://hazecow.com', // required
   baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: 'Hello, low-level world!',
   recentBlogSize: 5,
